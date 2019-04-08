@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Daily Task | Xcidic Test</title>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="../style/login.css">
+</head>
+<body>
+    <div class="container login-container">
+      <div class="row">
+          <div class="col-md-6 mx-auto registerForm">
+              <h3>Register Employee</h3>
+              <form action="/register/employee" method="POST">
+                  <div class="form-group">
+                      <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="" />
+                  </div>
+                  <div class="form-group">
+                      <input type="password" class="form-control" name="password" placeholder="Password" value="" />
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" name="name" placeholder="Name" value="" />
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control" name="address" placeholder="Address" value="" />
+                  </div>
+                  <div class="form-group">
+                      <input type="submit" class="btnSubmit" value="register" />
+                  </div>
+                  <div class="form-group">
+                      <a href="/">login</a>
+                  </div>
+              </form>
+              <%if(err.length!=0){%>
+                <div class="alert alert-danger" role="alert"><%=err%></div>
+            <%}%>
+          </div>
+      </div>
+  </div>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
