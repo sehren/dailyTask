@@ -25,7 +25,9 @@ app.use(flash());
 var manager = require('./routes/manager')(app,mysql,knex);
 var employee = require('./routes/employee')(app,mysql,knex);
 var login = require('./routes/login')(app,mysql,knex);
-
+app.get('/*',function(req,res){
+	res.render('error')
+})
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
