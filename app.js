@@ -11,10 +11,10 @@ var bodyParser = require('body-parser');
 knex = require('knex')({
 	client : 'mysql',
 	connection : {
-		host : 'localhost',
-		user : 'root',
-		password : '',
-		database : 'dailytask',
+		host : 'sql12.freemysqlhosting.net',
+		user : 'sql12287267',
+		password : 'muy4sxeMg4',
+		database : 'sql12287267',
 		port : '3306'
 	}
 });
