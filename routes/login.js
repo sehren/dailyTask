@@ -1,6 +1,6 @@
 module.exports = (app,mysql,knex)=>{
   var bodyParser = require('body-parser');
-  var bcrypt = require('bcrypt');
+  var bcrypt = require('bcryptjs');
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.get('/', function(req, res){
