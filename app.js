@@ -8,6 +8,7 @@ var app = express();
 var mysql = require('mysql');
 var session = require('express-session');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 knex = require('knex')({
 	client : 'mysql',
 	connection : {
@@ -19,12 +20,14 @@ knex = require('knex')({
 	}
 });
 app.use(bodyParser.json());
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({secret: 'ssshhhhh'}));
 app.use(flash());
 var manager = require('./routes/manager')(app,mysql,knex);
 var employee = require('./routes/employee')(app,mysql,knex);
 var login = require('./routes/login')(app,mysql,knex);
+var api = require('./routes/api')(app,mysql,knex);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

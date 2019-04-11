@@ -1,8 +1,7 @@
 module.exports = (app,mysql,knex)=>{
   var bodyParser = require('body-parser');
   var bcrypt = require('bcryptjs');
-  app.use(bodyParser.json());
-  app.use(bodyParser.urlencoded({ extended: true }));
+  
   app.get('/', function(req, res){
     if(req.session.auth=='employee'){
       knex.select('*').from('task').where('idEmployee',req.session.data.id).then(function(task){
@@ -146,5 +145,8 @@ module.exports = (app,mysql,knex)=>{
       if(!err)
         res.redirect('/');
     })
+  })
+  app.get('/express_backend',function(req,res){
+    res.send({express : 'connect to react'})
   })
 }
